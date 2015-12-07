@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tIU-f7-788">
-                                <rect key="frame" x="0.0" y="20" width="320" height="498"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tIU-f7-788">
+                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -29,6 +29,12 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tIU-f7-788" firstAttribute="bottom" secondItem="qHK-gP-r5X" secondAttribute="top" id="XvA-Qb-kE5"/>
+                            <constraint firstItem="tIU-f7-788" firstAttribute="top" secondItem="Lwt-wp-deR" secondAttribute="bottom" id="Y9m-wz-zkx"/>
+                            <constraint firstItem="tIU-f7-788" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="aci-iI-C9F"/>
+                            <constraint firstItem="tIU-f7-788" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="tBm-q5-yXP"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Words" image="first" id="acW-dT-cKf"/>
                     <connections>
@@ -51,8 +57,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="word" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kSs-Id-bmL">
-                                <rect key="frame" x="14" y="94" width="286" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="New word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a28-wn-kW2">
+                                <rect key="frame" x="98" y="28" width="125" height="34"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="word" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kSs-Id-bmL">
+                                <rect key="frame" x="98" y="76" width="125" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -60,23 +73,8 @@
                                     <outlet property="delegate" destination="8rJ-Kc-sve" id="5tm-aa-SYd"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a28-wn-kW2">
-                                <rect key="frame" x="91" y="35" width="139" height="37"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2n-an-sq4">
-                                <rect key="frame" x="234" y="192" width="66" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Add word"/>
-                                <connections>
-                                    <action selector="btnAddWord_Click:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="1ij-rD-zdR"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="luX-jg-X55">
-                                <rect key="frame" x="14" y="144" width="286" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="luX-jg-X55">
+                                <rect key="frame" x="98" y="125" width="125" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -84,9 +82,25 @@
                                     <outlet property="delegate" destination="8rJ-Kc-sve" id="kf4-R3-JgF"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="250" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2n-an-sq4">
+                                <rect key="frame" x="175" y="182" width="125" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Add word"/>
+                                <connections>
+                                    <action selector="btnAddWord_Click:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="1ij-rD-zdR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kSs-Id-bmL" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="3jd-FQ-wgW"/>
+                            <constraint firstItem="luX-jg-X55" firstAttribute="width" secondItem="kSs-Id-bmL" secondAttribute="width" id="OIe-jg-pWB"/>
+                            <constraint firstItem="kSs-Id-bmL" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" constant="20" id="QMh-rt-AiL"/>
+                            <constraint firstItem="luX-jg-X55" firstAttribute="leading" secondItem="kSs-Id-bmL" secondAttribute="leading" id="RPZ-ZI-gA2"/>
+                            <constraint firstItem="a28-wn-kW2" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="eCg-F7-bF7"/>
+                            <constraint firstAttribute="trailing" secondItem="p2n-an-sq4" secondAttribute="trailing" constant="20" id="kyg-JS-sqR"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add new word" image="second" id="cPa-gy-q4n"/>
                     <connections>
